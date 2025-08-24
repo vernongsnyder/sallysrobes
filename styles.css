@@ -666,3 +666,147 @@ header h1 {
   font-size: clamp(1.2rem, 2.5vw, 2rem); /* shrinks gracefully */
   white-space: nowrap; /* optional: forces single line */
 }
+
+header .brand h1 {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-weight: 400;  /* try 600 if you want bolder */
+  color: #2e5673;    /* your brand blue */
+}
+
+/* Keep header text white on all non-home pages (blue header) */
+body:not(#home) header .brand h1 { color: #ffffff; }
+body:not(#home) header nav a    { color: #ffffff; }
+
+/* You already have these, but keep for completeness */
+body:not(#home) header nav a:hover { background-color: rgba(255,255,255,0.2); }
+header nav a { transition: background-color 0.2s ease-in-out; }
+
+/* 1) Stop the horizontal jump when a scrollbar appears */
+html {
+  /* modern way */
+  scrollbar-gutter: stable;
+  /* fallback for older browsers */
+  overflow-y: scroll;
+}
+
+/* 2) Reserve consistent header height + alignment */
+header .wrap {
+  min-height: 64px;                 /* adjust to your taste */
+  display: flex;
+  align-items: center;
+}
+
+/* Keep brand title from changing line-height between pages */
+header .brand h1 {
+  margin: 0;
+  line-height: 1;
+}
+
+/* Make nav items consistent (no size change on hover/active) */
+header nav a {
+  display: inline-block;
+  line-height: 1;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 0;                         /* ensure no border flash */
+}
+
+/* Active/hover use background only — no border that could change size */
+header nav a.active {
+  background-color: #1f3c52;         /* your darker blue */
+  color: #fff;
+}
+#home header nav a:hover {
+  background-color: rgba(46,86,115,.5);
+}
+body:not(#home) header nav a:hover {
+  background-color: rgba(255,255,255,.2);
+}
+
+/* If needed to win over other rules */
+body:not(#home) header nav a { color: #fff !important; }
+
+/* modern fix — supported in Chrome/Edge/Firefox */
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
+/* fallback for older browsers (forces a scrollbar slot even if not needed) */
+html {
+  overflow-y: scroll;
+}
+
+/* 1) Stop the horizontal jump when a scrollbar appears */
+html {
+  /* modern way */
+  scrollbar-gutter: stable;
+  /* fallback for older browsers */
+  overflow-y: scroll;
+}
+
+/* 2) Reserve consistent header height + alignment */
+header .wrap {
+  min-height: 64px;                 /* adjust to your taste */
+  display: flex;
+  align-items: center;
+}
+
+/* Keep brand title from changing line-height between pages */
+header .brand h1 {
+  margin: 0;
+  line-height: 1;
+}
+
+/* Make nav items consistent (no size change on hover/active) */
+header nav a {
+  display: inline-block;
+  line-height: 1;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 0;                         /* ensure no border flash */
+}
+
+/* Active/hover use background only — no border that could change size */
+header nav a.active {
+  background-color: #1f3c52;         /* your darker blue */
+  color: #fff;
+}
+#home header nav a:hover {
+  background-color: rgba(46,86,115,.5);
+}
+body:not(#home) header nav a:hover {
+  background-color: rgba(255,255,255,.2);
+}
+
+/* If needed to win over other rules */
+body:not(#home) header nav a { color: #fff !important; }
+
+/* 1) Always reserve space for the vertical scrollbar */
+@supports (scrollbar-gutter: stable) {
+  html { scrollbar-gutter: stable both-edges; }
+}
+html { overflow-y: scroll; } /* fallback so a slot is always reserved */
+
+/* 2) Prevent nav width changes between pages */
+header nav { display: flex; gap: 0.25rem; }
+header nav a {
+  white-space: nowrap;
+  font-weight: 600;           /* same weight everywhere */
+  line-height: 1;
+  padding: 8px 12px;
+  border: 0;                  /* no borders that appear/disappear */
+}
+header nav a.active { font-weight: 600; } /* don’t bump weight on active */
+
+/* 3) Stabilize font swap (EB Garamond) metrics */
+header .brand h1 {
+  font-size-adjust: 0.46;     /* close to EB Garamond’s x-height */
+  margin: 0; line-height: 1;
+}
+
+/* 4) Lock header block height so it doesn’t reflow */
+header .wrap {
+  min-height: 64px;           /* adjust if your header is taller */
+  display: flex; align-items: center;
+}

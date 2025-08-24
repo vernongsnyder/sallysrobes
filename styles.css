@@ -810,3 +810,64 @@ header .wrap {
   min-height: 64px;           /* adjust if your header is taller */
   display: flex; align-items: center;
 }
+
+footer {
+  background-color: #1f3c52;            /* darker “footerish” blue */
+  color: #e6edf2;                       /* soft light text */
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Centered footer nav with readable links */
+footer .footernav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+footer .footernav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+}
+footer .footernav a:hover { color: #ffffff; }
+
+/* Scripture a bit lower and soft */
+footer .scripture {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 0 0 1.25rem;
+  color: #f0f4f8;
+  background: transparent;
+  border: 0;
+}
+
+/* Lighter address text to match footer tone */
+footer .contact-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #e6edf2;                        /* lighter than before */
+}
+footer .contact-info a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+footer .contact-info a:hover { color: #dfe7ee; }
+
+/* Copyright */
+footer .copyright {
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  color: #cdd6dd;
+}
+
+/* Kill any accidental borders/backgrounds that create “white stripes” */
+footer * {
+  background: transparent;
+  border: 0;
+}
+footer hr { display: none; }

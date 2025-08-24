@@ -76,18 +76,38 @@
   </section>
 </main>
 
+
+
 <footer>
   <div class="wrap small">
-    <div class="footernav">
+    <nav class="footernav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="robes.html">Burial Robes</a>
       <a href="contact.html">Contact</a>
+    </nav>
+
+    <p class="scripture">“Blessed are they who mourn, for they shall be comforted.” — Matthew 5:4</p>
+
+    <div class="contact-info">
+      <p>The Golden Thread, LLC</p>
+      <p>432 NW 6th Street, Suite 102<br>Grants Pass, OR 97526</p>
+      <p>541-659-6166</p>
+      <p><a href="mailto:info@burialclothing.com">info@burialclothing.com</a></p>
     </div>
-    <p>&copy; <span id="y"></span> [Brand Name]. All rights reserved.</p>
+
+    <p class="copyright">© <span id="year"></span> The Golden Thread, LLC. All rights reserved.</p>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<script>
+  // Make sure there’s only ONE element with id="year" on the page
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
+
 

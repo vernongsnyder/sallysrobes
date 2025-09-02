@@ -1,7 +1,5 @@
 /* stability helpers that don't alter desktop */
-@media (max-width:768px){
-  body { outline: 4px solid red; }
-}
+body { background: yellow !important; }
 *{box-sizing:border-box}
 img,video{max-width:100%;height:auto;display:block}
 html{scrollbar-gutter:stable both-edges}
